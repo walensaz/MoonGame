@@ -3,6 +3,8 @@ package scala.me.zach
 import java.sql
 import java.sql.{Connection, DriverManager, ResultSet}
 
+import scala.me.zach.player.resources.EnergyResource
+
 object Database {
 
   implicit val session: Connection = {
@@ -15,7 +17,6 @@ object Database {
   }
 
   case class Statement(query: String) {
-
     def execute(): ResultSet = {
       val queryStatement: sql.Statement = session.createStatement()
       queryStatement.executeQuery(query)

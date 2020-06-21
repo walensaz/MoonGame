@@ -1,6 +1,5 @@
 package scala.me.zach
 
-import scala.concurrent.{ExecutionContext, Future}
 import scala.language.postfixOps
 import scala.me.zach.Database.Statement
 import scala.me.zach.managers.AsyncManager
