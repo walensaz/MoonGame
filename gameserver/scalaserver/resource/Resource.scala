@@ -1,4 +1,4 @@
-package scalaserver.player.resource
+package scalaserver.resource
 
 trait Resource {
   val id: Int

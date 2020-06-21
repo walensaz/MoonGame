@@ -1,6 +1,6 @@
 package scalaserver.player
 
-import scalaserver.player.resource.{Resource, ResourceAmount}
+import scalaserver.resource.{Resource, ResourceAmount}
 
 class Player(resources: ) {
 

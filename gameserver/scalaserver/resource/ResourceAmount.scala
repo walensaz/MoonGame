@@ -1,3 +1,3 @@
-package scalaserver.player.resource
+package scalaserver.resource
 
 case class ResourceAmount(amount: Int)
