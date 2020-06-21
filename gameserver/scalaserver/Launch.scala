@@ -1,8 +1,9 @@
-package scala.me.zach
+package scalaserver
+
+import scalaserver.Database.Statement
+import scalaserver.managers.AsyncManager
 
 import scala.language.postfixOps
-import scala.me.zach.Database.Statement
-import scala.me.zach.managers.AsyncManager
 
 object Launch extends App {
 

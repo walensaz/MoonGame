@@ -1,9 +1,7 @@
-package scala.me.zach
+package scalaserver
 
 import java.sql
 import java.sql.{Connection, DriverManager, ResultSet}
-
-import scala.me.zach.player.resources.EnergyResource
 
 object Database {
 

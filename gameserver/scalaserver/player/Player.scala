@@ -1,6 +1,6 @@
-package scala.me.zach.player
+package scalaserver.player
 
-import scala.me.zach.player.resources.Resource
+import scalaserver.player.resources.Resource
 
 class Player {
 

@@ -1,4 +1,4 @@
-package scala.me.zach.player.resources
+package scalaserver.player.resources
 
 object WaterResource extends Resource {
   val id = 2
