@@ -1,4 +1,4 @@
-package scala.me.zach
+package scala.me.zach.managers
 
 import java.util.concurrent.{Executors, ScheduledExecutorService}
 
