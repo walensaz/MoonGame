@@ -1,9 +1,15 @@
 package scalaserver.player
 
-class Player(resources: ) {
+import scalaserver.entity.Entity
+import scalaserver.resource.Resources
 
-  val resources: Map[Int, ResourceAmount] = Resource.getDefinedResources.map(
-    resource => resource.id -> ResourceAmount(10000)).toMap
+class Player(credentials: Credentials, resources: Resources, session: Session = Session.NONE) extends Entity {
 
+
+
+
+  def update(): Unit = {
+    if(!session.isOnline) return
+  }
 
 }
