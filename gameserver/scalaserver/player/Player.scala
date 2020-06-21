@@ -1,10 +1,11 @@
 package scalaserver.player
 
-import scalaserver.player.resources.Resource
+import scalaserver.player.resource.{Resource, ResourceAmount}
 
-class Player {
+class Player(resources: ) {
 
-  val resources: Map[Resource.id, Resource] = Map.empty
+  val resources: Map[Int, ResourceAmount] = Resource.getDefinedResources.map(
+    resource => resource.id -> ResourceAmount(10000)).toMap
 
 
 }
