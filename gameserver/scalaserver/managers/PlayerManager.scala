@@ -3,7 +3,7 @@ package scalaserver.managers
 import scalaserver.resource.Resources
 import scalaserver.session.player.{Credentials, Player}
 
-object PlayerManager {
+object PlayerManager extends Manager {
 
   var playersOnline: List[Player] = List.empty
 

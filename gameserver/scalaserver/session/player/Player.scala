@@ -6,9 +6,6 @@ import scalaserver.session.Session
 
 class Player(credentials: Credentials, resources: Resources, session: Session = Session.NONE) extends Entity {
 
-
-
-
   def update(): Unit = {
     if(!session.isOnline) return
   }

@@ -3,7 +3,7 @@ package scalaserver.managers
 import scalaserver.Logger
 import scalaserver.event.{EventExecutor, Event}
 
-object EventManager {
+object EventManager extends Manager {
 
   private var events: Map[String, Class[EventExecutor]] = Map.empty
 

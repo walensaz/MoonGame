@@ -1,14 +1,11 @@
 package scalaserver.managers
 
-import java.util.concurrent.{Executors, ScheduledExecutorService, TimeUnit}
-
-import scalaserver.Config.ServerConfig
-import scalaserver.entity.Listener
+import java.util.concurrent.{Executors, ScheduledExecutorService}
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success}
 
-object AsyncManager {
+object AsyncManager extends Manager {
 
   private implicit val ec: ExecutionContext = ExecutionContext.global
 
