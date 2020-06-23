@@ -4,8 +4,8 @@ import java.net.{ServerSocket, Socket}
 import java.util.concurrent.TimeUnit
 
 import scalaserver.Config.ServerConfig
-import scalaserver.event.EventManager
-import scalaserver.managers.AsyncManager
+import scalaserver.entity.Listener
+import scalaserver.managers.{AsyncManager, EventManager}
 import scalaserver.session.SessionConnectEvent
 
 object Server {
@@ -14,21 +14,19 @@ object Server {
   def getInstance(): Server = serverInstance
 
   def start(): Unit = {
-    AsyncManager.scheduler.scheduleAtFixedRate(clientServerListener, 100L, ServerConfig.TICK_RATE, TimeUnit.MILLISECONDS)
+    AsyncManager
   }
 
 
   class IncomingConnectionsListener extends Listener {
+
+    val name: String = "incoming.connections.listener"
+
     def run(): Unit = {
-      try {
-        val newConnectionSocket: Socket = serverInstance.serverSocket.accept()
-        if(newConnectionSocket != null) {
-          EventManager.callEvent(SessionConnectEvent(newConnectionSocket))
-        }
-      }
+      val newConnectionSocket: Socket = serverInstance.serverSocket.accept()
+      if(newConnectionSocket != null) EventManager.callEvent(SessionConnectEvent(newConnectionSocket))
     }
   }
-
 }
 
 class Server {

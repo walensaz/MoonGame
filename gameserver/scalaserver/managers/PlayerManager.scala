@@ -1,8 +1,6 @@
 package scalaserver.managers
 
-import scalaserver.Database
 import scalaserver.resource.Resources
-import scalaserver.session.Credentials
 import scalaserver.session.player.{Credentials, Player}
 
 object PlayerManager {

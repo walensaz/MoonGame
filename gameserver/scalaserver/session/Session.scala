@@ -10,8 +10,8 @@ case class Session(socket: Socket, out: PrintWriter, in: BufferedReader) {
 object Session {
   val NONE: Session = Session(null, null, null)
 
-  def createNewSession(socket: Socket): Session = {
-    Session(socket, new PrintWriter(socket.getOutputStream), new BufferedReader(new InputStreamReader(socket.getInputStream)))
-  }
+  def createNewSession(socket: Socket): Session = Session(socket, new PrintWriter(socket.getOutputStream), new BufferedReader(new InputStreamReader(socket.getInputStream)))
+
+
 
 }
