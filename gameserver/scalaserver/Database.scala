@@ -24,6 +24,4 @@ object Database {
   def getFromDataBase(session: Connection = session, query: Statement): Any = {
     query.execute()
   }
-
-
 }

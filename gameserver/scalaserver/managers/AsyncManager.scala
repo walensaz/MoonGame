@@ -1,6 +1,9 @@
 package scalaserver.managers
 
-import java.util.concurrent.{Executors, ScheduledExecutorService}
+import java.util.concurrent.{Executors, ScheduledExecutorService, TimeUnit}
+
+import scalaserver.Config.ServerConfig
+import scalaserver.server.Listener
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success}
@@ -28,6 +31,10 @@ object AsyncManager {
       case Success(value) => callback(value)
       case Failure(exception) => println(exception.getMessage)
     }
+  }
+
+  def registerListener(newListener: Listener): Unit = {
+    scheduler.scheduleAtFixedRate(newListener, 100L, ServerConfig.TICK_RATE, TimeUnit.MILLISECONDS)
   }
 
 
