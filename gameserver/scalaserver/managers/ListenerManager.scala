@@ -1,6 +1,6 @@
 package scalaserver.managers
 
-import java.util.concurrent.{Future, TimeUnit}
+import java.util.concurrent.{Future, ScheduledFuture, TimeUnit}
 
 import scalaserver.Config.ServerConfig
 import scalaserver.Logger
@@ -8,12 +8,12 @@ import scalaserver.entity.Listener
 
 object ListenerManager extends Manager {
 
-  var listeners: Map[String, Future[Listener]] = Map.empty
+  var listeners: Map[String, ScheduledFuture[_]] = Map.empty
 
   def registerListener(listener: Listener): Unit = {
     listeners.find(_._1.equals(listener.name)).getOrElse({
-      listeners + listener.name -> AsyncManager.scheduler.scheduleAtFixedRate(listener, 100L, ServerConfig.TICK_RATE, TimeUnit.MILLISECONDS)
-      Logger.log(s"Registered new listener with name ${listener.name}")
+      listeners = listeners + (listener.name -> AsyncManager.scheduler.scheduleAtFixedRate(listener, 100L, ServerConfig.TICK_RATE, TimeUnit.MILLISECONDS))
+      Logger.error(s"Registered new listener with name ${listener.name}")
     })
   }
 
