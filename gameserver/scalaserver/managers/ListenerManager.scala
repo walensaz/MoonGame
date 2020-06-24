@@ -13,7 +13,7 @@ object ListenerManager extends Manager {
   def registerListener(listener: Listener): Unit = {
     listeners.find(_._1.equals(listener.name)).getOrElse({
       listeners = listeners + (listener.name -> AsyncManager.scheduler.scheduleAtFixedRate(listener, 100L, ServerConfig.TICK_RATE, TimeUnit.MILLISECONDS))
-      Logger.error(s"Registered new listener with name ${listener.name}")
+      Logger.notify(s"Registered new listener with name ${listener.name}")
     })
   }
 
@@ -22,7 +22,7 @@ object ListenerManager extends Manager {
       case Some(listener) =>
         listener._2.cancel(false)
         listeners = listeners.filter(_._1.equals(listenerName))
-        Logger.info(s"Listener successfully deregistered with name $listenerName")
+        Logger.notify(s"Listener successfully deregistered with name $listenerName")
       case _ => Logger.error(s"Attempted to deregister event with name $listenerName and event could not be found!")
     }
   }

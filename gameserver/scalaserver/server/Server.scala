@@ -4,6 +4,7 @@ import java.net.{ServerSocket, Socket}
 import java.util.concurrent.TimeUnit
 
 import scalaserver.Config.ServerConfig
+import scalaserver.{BaseModule, Logger}
 import scalaserver.entity.Listener
 import scalaserver.managers.{AsyncManager, EventManager}
 import scalaserver.session.SessionConnectEvent
@@ -13,10 +14,17 @@ object Server {
 
   def getInstance(): Server = serverInstance
 
-  def start(): Unit = {
-    AsyncManager
+  def init(): Unit = {
+    if(BaseModule.registerAllEvents() &&
+    BaseModule.registerAllPackets() &&
+    BaseModule.registerListeners() &&
+    BaseModule.registerResources()) Logger.log("Everything successfully registered")
   }
 
+  def start(): Unit = {
+    init()
+    Logger.log("Server has been started!")
+  }
 
   class IncomingConnectionsListener extends Listener {
 

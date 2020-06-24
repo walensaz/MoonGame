@@ -10,7 +10,7 @@ object EventManager extends Manager {
   def registerEvent(event: EventExecutor): Unit = {
     events.find(_._1.equalsIgnoreCase(event.eventName)).getOrElse({
       events = events + (event.eventName -> event.getClass)
-      Logger.log(s"Registered new event with the name ${event.eventName}")
+      Logger.notify(s"Registered new event with the name ${event.eventName}")
     })
   }
 

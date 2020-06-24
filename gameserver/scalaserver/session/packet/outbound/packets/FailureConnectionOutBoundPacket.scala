@@ -8,7 +8,8 @@ class FailureConnectionOutBoundPacket extends OutBoundPacket {
 
   def encode(payload: OutBoundPacketPayload): JSONObject = {
     val data = payload.asInstanceOf[FailureConnectionOutBoundPacketPayload]
-    val packet = new JSONObject().put(FailureConnectionOutBoundPacketKeys.messageKey, data.message)
+    val packet = new JSONObject()
+      .put(FailureConnectionOutBoundPacketKeys.messageKey, data.message)
     Packet.jsonPacket(this, packet)
   }
 

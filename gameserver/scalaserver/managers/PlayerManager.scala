@@ -15,5 +15,9 @@ object PlayerManager extends Manager {
     //playersOnline :+ new Player(credentials)
   }
 
+  def getPlayer(sessionId: Int): Option[Player] = {
+    playersOnline.find(_.session.sessionID == sessionId)
+  }
+
 
 }

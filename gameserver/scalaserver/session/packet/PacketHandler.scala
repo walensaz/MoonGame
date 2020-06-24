@@ -1,9 +1,11 @@
 package scalaserver.session.packet
 
 import scalaserver.session.Session
+import scalaserver.session.packet.inbound.InBoundPacket
 
-class PacketHandler(session: Session) {
+case class PacketHandler(session: Session) {
 
-
-
+  def handlePacket(packet: PacketPayLoad): Unit = {
+    packet.clazz.newInstance().asInstanceOf[InBoundPacket].execute(packet.jsonObject)
+  }
 }
