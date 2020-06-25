@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rts.client.controllers.GameController">
+   <children>
+      <JFXPasswordField focusColor="#6d7dae" layoutX="14.0" layoutY="349.0" maxWidth="472.0" minWidth="282.0" prefHeight="37.0" prefWidth="472.0" promptText="Chat message" unFocusColor="#00000034" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="114.0" AnchorPane.topAnchor="349.0" />
+   </children>
+</AnchorPane>

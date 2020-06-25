@@ -1,6 +1,7 @@
-package scalaserver.session.packet
+package scalaserver.session.packet.inbound.packets
 
 import org.json.JSONObject
+import scalaserver.session.packet.Packet
 import scalaserver.session.packet.inbound.InBoundPacket
 
 object LoginPacket extends Packet {

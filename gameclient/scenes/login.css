@@ -1,0 +1,12 @@
+.root {
+-fx-background-color: #2B2A2A;
+}
+
+.toplabel { -fx-text-fill: #DBDADA; }
+
+.loginbutton { -fx-background-color: #ECECEC; }
+
+.vbox { -fx-background-color: #373737; }
+
+.text-field { -fx-text-fill: #DBDADA; }
+

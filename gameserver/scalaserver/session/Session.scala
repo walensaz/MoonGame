@@ -15,7 +15,7 @@ case class Session(socket: Socket, out: PrintWriter, in: BufferedReader, session
   def initSession(): Unit = startPacketListener()
 
 
-  def startPacketListener(): Unit = ListenerManager.registerListener(new PacketListener(this))
+  def startPacketListener(): Unit = ListenerManager.registerListener(new PacketListener(this, packetHandler))
 
   def isOnline: Boolean = socket.isConnected
 }
