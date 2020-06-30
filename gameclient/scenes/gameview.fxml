@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.303475935828877" prefHeight="160.0" prefWidth="200.0" styleClass="split" stylesheets="@mainview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="135.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <VBox prefHeight="548.0" prefWidth="137.0" styleClass="vbox" stylesheets="@resources.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXTextField disable="true" editable="false" focusColor="BLACK" prefHeight="45.0" prefWidth="220.0" stylesheets="@resources.css" text="Energy: 5000" unFocusColor="BLACK">
+                           <styleClass>
+                              <String fx:value="resourcetext" />
+                              <String fx:value="energytext" />
+                           </styleClass>
+                        </JFXTextField>
+                        <JFXTextField disable="true" editable="false" focusColor="BLACK" layoutX="10.0" layoutY="10.0" styleClass="resourcetext" stylesheets="@resources.css" text="Food: 5000" unFocusColor="BLACK" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <JFXButton buttonType="RAISED" cache="true" layoutY="-2.0" prefHeight="32.0" prefWidth="128.0" ripplerFill="#0090ff" text="Menu" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-2.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="128.0" layoutY="-2.0" prefHeight="32.0" prefWidth="128.0" text="Home" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="-2.0" />
+                  <Separator layoutY="29.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <effect>
+                        <InnerShadow color="#363434" height="170.27" radius="60.535000000000004" width="73.87" />
+                     </effect>
+                  </Separator>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

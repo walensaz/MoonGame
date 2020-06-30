@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="stage" prefHeight="500.0" prefWidth="700.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
+   <children>
+      <VBox fx:id="vbox" prefHeight="350.0" prefWidth="550.0" spacing="20.0" styleClass="vbox" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <Label fx:id="title" maxHeight="100.0" styleClass="toplabel" text="Moon Game" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="220.0" />
+               </VBox.margin>
+            </Label>
+            <HBox fillHeight="false" maxHeight="120.0" prefHeight="13.0" prefWidth="295.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <JFXTextField fx:id="username" minWidth="226.0" prefHeight="37.0" prefWidth="397.0" promptText="Username" unFocusColor="#00000040" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets left="150.0" right="125.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="550.0" VBox.vgrow="NEVER">
+               <children>
+                  <JFXPasswordField fx:id="password" layoutX="10.0" layoutY="10.0" maxHeight="120.0" minWidth="226.0" prefHeight="37.0" prefWidth="286.0" promptText="Password" unFocusColor="#00000040" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                  </JFXPasswordField>
+               </children>
+               <VBox.margin>
+                  <Insets left="150.0" right="125.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="550.0">
+               <children>
+                  <JFXPasswordField fx:id="confirmPassword" layoutX="10.0" layoutY="10.0" maxHeight="120.0" minWidth="226.0" prefHeight="37.0" prefWidth="286.0" promptText="Confirm Password" unFocusColor="#00000040" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXPasswordField>
+               </children>
+               <VBox.margin>
+                  <Insets left="150.0" right="125.0" />
+               </VBox.margin>
+            </HBox>
+            <JFXButton fx:id="registerButton" alignment="TOP_LEFT" buttonType="RAISED" defaultButton="true" opacity="0.68" ripplerFill="#141414" styleClass="loginbutton" text="Register" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="245.0" />
+               </VBox.margin>
+            </JFXButton>
+            <HBox fx:id="extrasBox" prefHeight="36.0" prefWidth="144.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Hyperlink fx:id="alreadyHaveAccount" text="Already have an account, Login">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Hyperlink>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="180.0" right="160.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

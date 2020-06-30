@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class LoginController implements Initializable {
+public class RegisterController implements Initializable {
 
     private int width = 550, height = 350;
 
@@ -27,10 +27,13 @@ public class LoginController implements Initializable {
     JFXPasswordField password;
 
     @FXML
+    JFXPasswordField confirmPassword;
+
+    @FXML
     AnchorPane stage;
 
     @FXML
-    JFXButton loginbutton;
+    JFXButton registerButton;
 
     @FXML
     Label title;
@@ -42,7 +45,7 @@ public class LoginController implements Initializable {
     VBox vbox;
 
     @FXML
-    Hyperlink FPassword, CAccount;
+    Hyperlink alreadyHaveAccount;
 
     public void login() {
 
@@ -53,18 +56,18 @@ public class LoginController implements Initializable {
         ChangeListener<Number> vboxSizeListener = (observable, oldValue, newValue) -> {
             if(stage.getWidth() <= 710) {
                 title.setTranslateX(0);
-                loginbutton.setTranslateX(0);
+                registerButton.setTranslateX(0);
                 extrasBox.setTranslateX(0);
                 username.setStyle("-fx-font-size:15;");
             } else {
                 title.setTranslateX((vbox.getWidth() - width) / 2.3);
-                loginbutton.setTranslateX((vbox.getWidth() - width) / 2.25);
+                registerButton.setTranslateX((vbox.getWidth() - width) / 2.25);
                 extrasBox.setTranslateX((vbox.getWidth() - width) / 2.5);
             }
 
             if(stage.getHeight() <= 560) {
                 title.setTranslateY(0);
-                loginbutton.setTranslateY(0);
+                registerButton.setTranslateY(0);
                 extrasBox.setTranslateY(0);
                 password.setTranslateY(0);
                 username.setTranslateY(0);
@@ -79,10 +82,9 @@ public class LoginController implements Initializable {
                 username.setStyle("-fx-font-size:" + (15 + (int)(vbox.getHeight() - height) / 20) + ";");
                 password.setTranslateY((vbox.getHeight() - height) / 2);
                 password.setStyle("-fx-font-size:" + (15 + (int)(vbox.getHeight() - height) / 20) + ";");
-                FPassword.setStyle("-fx-font-size:" + (10 + (int)(vbox.getHeight() - height) / 26) + ";");
-                CAccount.setStyle("-fx-font-size:" + (10 + (int)(vbox.getHeight() - height) / 26) + ";");
+                alreadyHaveAccount.setStyle("-fx-font-size:" + (10 + (int)(vbox.getHeight() - height) / 26) + ";");
                 vbox.setStyle("-fx-font-size:" + (15 + (int)(vbox.getHeight() - height) / 20) + ";");
-                loginbutton.setTranslateY((vbox.getHeight() - height) / 2);
+                registerButton.setTranslateY((vbox.getHeight() - height) / 2);
                 extrasBox.setTranslateY((vbox.getHeight() - height) / 2);
             }
         };

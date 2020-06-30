@@ -1,0 +1,13 @@
+.resourcetext {
+-fx-font-size: 22pt;
+-fx-background-color: #30363d;
+-fx-border-color: #000000;
+}
+
+.energytext {
+-fx-text-fill: #b2b80b;
+}
+
+.vbox {
+-fx-background-color: #373737;
+}
