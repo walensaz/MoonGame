@@ -4,3 +4,7 @@ trait Listener extends Runnable {
   val name: String
   def run(): Unit
 }
+
+object Listener {
+  type nameId = String
+}

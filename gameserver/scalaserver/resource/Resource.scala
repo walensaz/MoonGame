@@ -5,6 +5,7 @@ trait Resource {
 }
 
 object Resource {
+  type id = Int
 
   private var resources: List[Resource] = List.empty
 

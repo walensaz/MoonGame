@@ -7,6 +7,7 @@ trait Packet {
 }
 
 object Packet {
+  type packetID = String
   def jsonPacket(packet: Packet, jsonObject: JSONObject): JSONObject = {
     new JSONObject().put(packet.packetID, jsonObject)
   }

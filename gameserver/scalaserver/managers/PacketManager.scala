@@ -6,7 +6,7 @@ import scalaserver.session.packet.{Packet, PacketPayLoad}
 
 object PacketManager extends Manager {
 
-  var packets: Map[String, Class[_ <: Packet]] = Map.empty
+  var packets: Map[Packet.packetID, Class[_ <: Packet]] = Map.empty
 
   def registerPacket(packet: Packet): Unit = {
     packets.find(_._1.equals(packet.packetID)).getOrElse({
