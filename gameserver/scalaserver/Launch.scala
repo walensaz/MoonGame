@@ -9,7 +9,7 @@ import scala.language.postfixOps
 object Launch extends App {
   Server.start()
 
-  println(new SuccessfulConnectionOutBoundPacket().encode(SuccessfulConnectionOutBoundPacketPayload(Session.NONE)).toString(4))
+  println(SuccessfulConnectionOutBoundPacket().encode(SuccessfulConnectionOutBoundPacketPayload(Session.NONE)).toString(4))
 
 
 

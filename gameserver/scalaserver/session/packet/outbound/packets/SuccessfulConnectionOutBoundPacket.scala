@@ -1,15 +1,20 @@
 package scalaserver.session.packet.outbound.packets
 
 import org.json.JSONObject
+import scalaserver.json.JSON
 import scalaserver.session.Session
 import scalaserver.session.packet.Packet
 import scalaserver.session.packet.outbound.{OutBoundPacket, OutBoundPacketPayload}
-
+/**
+ * Zachary Walensa 2020
+ */
 class SuccessfulConnectionOutBoundPacket extends OutBoundPacket {
 
   def encode(payload: OutBoundPacketPayload): JSONObject = {
     val data = payload.asInstanceOf[SuccessfulConnectionOutBoundPacketPayload]
-    val packet = new JSONObject().put(SuccessfulConnectionOutBoundPacketKeys.sessionKey, data.session.sessionID)
+    val packet = JSON(Map(
+      SuccessfulConnectionOutBoundPacketKeys.sessionKey -> data.session.sessionID
+    ))
     Packet.jsonPacket(this, packet)
   }
 

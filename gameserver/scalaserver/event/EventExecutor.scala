@@ -7,5 +7,5 @@ trait EventExecutor {
 }
 
 object EventExecutor {
-  type nameId = String
+  type Id = String
 }

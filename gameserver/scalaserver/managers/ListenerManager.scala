@@ -8,7 +8,7 @@ import scalaserver.entity.Listener
 
 object ListenerManager extends Manager {
 
-  var listeners: Map[Listener.nameId, ScheduledFuture[_]] = Map.empty
+  var listeners: Map[Listener.Id, ScheduledFuture[_]] = Map.empty
 
   def registerListener(listener: Listener): Unit = {
     listeners.find(_._1.equals(listener.name)).getOrElse({

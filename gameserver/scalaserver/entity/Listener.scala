@@ -6,5 +6,5 @@ trait Listener extends Runnable {
 }
 
 object Listener {
-  type nameId = String
+  type Id = String
 }

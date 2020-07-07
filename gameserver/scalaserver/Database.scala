@@ -5,7 +5,7 @@ import java.sql.{Connection, DriverManager, ResultSet}
 
 object Database {
 
-  implicit val session: Connection = {
+  lazy val session: Connection = {
     val url = "jdbc:mysql://localhost:8889/mysql"
     val driver = "com.mysql.jdbc.Driver"
     val username = "root"
@@ -21,7 +21,7 @@ object Database {
     }
   }
 
-  def getFromDataBase(session: Connection = session, query: Statement): Any = {
-    query.execute()
+  def doQuery(query: String): ResultSet = {
+    Statement(query).execute()
   }
 }

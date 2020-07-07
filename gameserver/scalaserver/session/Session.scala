@@ -21,6 +21,8 @@ case class Session(socket: Socket, out: PrintWriter, in: BufferedReader, session
 }
 
 object Session {
+  type Id = Int
+
   val NONE: Session = Session(null, null, null, -1)
 
   def createNewSession(socket: Socket): Session = Session(socket, new PrintWriter(socket.getOutputStream), new BufferedReader(new InputStreamReader(socket.getInputStream)))

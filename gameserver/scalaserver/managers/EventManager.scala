@@ -5,7 +5,7 @@ import scalaserver.event.{Event, EventExecutor}
 
 object EventManager extends Manager {
 
-  private var events: Map[EventExecutor.nameId, Class[_ <: EventExecutor]] = Map.empty
+  private var events: Map[EventExecutor.Id, Class[_ <: EventExecutor]] = Map.empty
 
   def registerEvent(event: EventExecutor): Unit = {
     events.find(_._1.equalsIgnoreCase(event.eventName)).getOrElse({

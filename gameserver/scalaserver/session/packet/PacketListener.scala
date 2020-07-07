@@ -1,9 +1,12 @@
 package scalaserver.session.packet
 
-import scalaserver.Logger
 import scalaserver.entity.Listener
 import scalaserver.managers.PacketManager
 import scalaserver.session.Session
+
+/**
+ * Zachary Walensa 2020
+ */
 
 class PacketListener(session: Session, packetHandler: PacketHandler) extends Listener {
   val name: String = s"packet.handler.${session.sessionID}"
