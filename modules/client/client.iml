@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../modules/client">
+      <sourceFolder url="file://$MODULE_DIR$/../modules/client/gameclient" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="scala-sdk-2.13.2" level="application" />
+    <orderEntry type="library" exported="" name="json-20200518" level="project" />
+    <orderEntry type="module" module-name="shared" exported="" />
+  </component>
+</module>
