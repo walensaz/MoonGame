@@ -12,5 +12,6 @@ import scalaserver.session.packet.Packet
  * See inbound packet for attempting to receive a packet from the client
  */
 trait OutBoundPacket extends Packet {
+  val packetKeys = FromServer
   def encode(payload: OutBoundPacketPayload = null): JSONObject
 }

@@ -1,31 +1,25 @@
 package scalaserver.session.packet.inbound.packets
 
 import org.json.JSONObject
-import scalaserver.Database
 import scalaserver.json.JSON
+import scalaserver.managers.PlayerManager
+import scalaserver.session.Session
 import scalaserver.session.packet.Packet
 import scalaserver.session.packet.inbound.InBoundPacket
 import scalaserver.session.packet.outbound.{OutBoundPacket, OutBoundPacketPayload}
 
-object PlayerRegisterPacket extends Packet {
-  val packetID: String = "player.register"
-}
-
 class InBoundPlayerRegisterPacket extends InBoundPacket {
-  def execute(jsonObject: JSONObject): Unit = {
+  def execute(jsonObject: JSONObject, session: Session): Unit = {
     val data = jsonObject.getJSONObject(packetID)
     val username = data.getString("username")
     val password = data.getString("password")
-    val result = Database.doQuery(s"SELECT * FROM registered_users WHERE username = $username")
-    if(!result.next()) {
-      Database.doQuery(s"INSERT INTO registered_users (username, password) VALUES ($username, $password)")
-
-    } else {
-
-    }
+    val wasRegistered = PlayerManager.tryRegisterPlayer(username, password)
+    val packetToSend = new OutBoundPlayerRegisterPacket()
+      .encode(OutBoundPlayerRegisterPacketPayload(wasRegistered))
+    session.sendPacket(packetToSend)
   }
 
-  val packetID: String = PlayerRegisterPacket.packetID + ".inbound"
+  val packetID: String = packetKeys.RegisterOutBoundPacketKey
 }
 
 class OutBoundPlayerRegisterPacket extends OutBoundPacket {
@@ -34,7 +28,7 @@ class OutBoundPlayerRegisterPacket extends OutBoundPacket {
     Packet.jsonPacket(this, JSON(Map("wassuccessful" -> info.wasSuccessful)))
   }
 
-  val packetID: String = PlayerRegisterPacket.packetID + ".outbound"
+  val packetID: String = packetKeys.RegisterOutBoundPacketKey
 }
 
 case class OutBoundPlayerRegisterPacketPayload(wasSuccessful: Boolean) extends OutBoundPacketPayload

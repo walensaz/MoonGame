@@ -3,6 +3,7 @@ package scalaserver.session
 import java.io.{BufferedReader, InputStreamReader, PrintWriter}
 import java.net.Socket
 
+import org.json.JSONObject
 import scalaserver.Utils
 import scalaserver.managers.ListenerManager
 import scalaserver.session.packet.{PacketHandler, PacketListener}
@@ -12,10 +13,16 @@ case class Session(socket: Socket, out: PrintWriter, in: BufferedReader, session
   val packetHandler: PacketHandler = PacketHandler(this)
   initSession()
 
-  def initSession(): Unit = startPacketListener()
+  private def initSession(): Unit = startPacketListener()
 
 
-  def startPacketListener(): Unit = ListenerManager.registerListener(new PacketListener(this, packetHandler))
+  private def startPacketListener(): Unit = ListenerManager.registerListener(new PacketListener(this, packetHandler))
+
+  def sendPacket(jsonObject: JSONObject): Unit = {
+    out.println(jsonObject.toString)
+    out.flush()
+  }
+
 
   def isOnline: Boolean = socket.isConnected
 }

@@ -1,6 +1,7 @@
 package scalaserver.session.packet.inbound
 
 import org.json.JSONObject
+import scalaserver.session.Session
 import scalaserver.session.packet.Packet
 
 /**
@@ -11,5 +12,6 @@ import scalaserver.session.packet.Packet
  * See outbound packet for attempting to send a packet to the client
  */
 trait InBoundPacket extends Packet {
-  def execute(jsonObject: JSONObject)
+  val packetKeys = FromClient
+  def execute(jsonObject: JSONObject, session: Session)
 }

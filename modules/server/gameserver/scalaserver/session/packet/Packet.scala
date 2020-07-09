@@ -2,10 +2,11 @@ package scalaserver.session.packet
 
 import org.json.JSONObject
 import scalaserver.json.JSON
+import sharedkeys.PacketKeys
 /**
  * Zachary Walensa 2020
  */
-trait Packet {
+trait Packet extends PacketKeys {
   val packetID: String
 }
 
