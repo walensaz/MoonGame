@@ -2,13 +2,14 @@ package scalaserver.managers
 
 import org.json.JSONObject
 import scalaserver.Logger
+import scalaserver.session.packet.outbound.OutBoundPacket
 import scalaserver.session.packet.{Packet, PacketPayLoad}
 
 object PacketManager extends Manager {
 
-  var packets: Map[Packet.Id, Class[_ <: Packet]] = Map.empty
+  var packets: Map[Packet.Id, Class[_ <: OutBoundPacket]] = Map.empty
 
-  def registerPacket(packet: Packet): Unit = {
+  def registerPacket(packet: OutBoundPacket): Unit = {
     packets.find(_._1.equals(packet.packetID)).getOrElse({
       packets = packets + (packet.packetID -> packet.getClass)
       Logger.notify(s"Registered packet with id ${packet.packetID}")
