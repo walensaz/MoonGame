@@ -1,7 +1,7 @@
 package scalaserver.session.player
 
 import scalaserver.entity.Entity
-import scalaserver.resource.Resources
+import scalaserver.session.player.resource.Resources
 import scalaserver.session.Session
 import scalaserver.session.packet.PacketHandler
 

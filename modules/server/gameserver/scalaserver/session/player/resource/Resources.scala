@@ -1,4 +1,4 @@
-package scalaserver.resource
+package scalaserver.session.player.resource
 
 case class Resources(resources: Map[ResourceType.Id, ResourceAmount])
 

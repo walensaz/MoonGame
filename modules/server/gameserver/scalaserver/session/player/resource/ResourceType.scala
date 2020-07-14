@@ -1,4 +1,4 @@
-package scalaserver.resource
+package scalaserver.session.player.resource
 
 case class ResourceType(id: Int, defaultAmount: Int)
 
