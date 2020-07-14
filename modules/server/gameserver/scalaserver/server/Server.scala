@@ -10,15 +10,12 @@ import scalaserver.managers.{AsyncManager, EventManager}
 import scalaserver.session.SessionConnectEvent
 
 object Server {
-  private val serverInstance = new Server
-
-  def getInstance(): Server = serverInstance
+  lazy val serverInstance = new Server
 
   def init(): Unit = {
     if(BaseModule.registerAllEvents() &&
     BaseModule.registerAllPackets() &&
-    BaseModule.registerListeners() &&
-    BaseModule.registerResources()) Logger.log("Everything successfully registered")
+    BaseModule.registerListeners()) Logger.log("Everything successfully registered")
   }
 
   def start(): Unit = {
