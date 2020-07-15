@@ -6,8 +6,8 @@ import scalaserver.session.Session
 class OnPlayerLoginEvent extends EventExecutor {
   val eventName: String = PlayerLoginEvent.eventName
 
-  def execute(eventPayload: Event): Unit = {
-    val data = eventPayload.asInstanceOf[PlayerLoginEvent]
+  def execute(event: Event): Unit = {
+    val data = event.asInstanceOf[PlayerLoginEvent]
   }
 }
 

@@ -12,8 +12,8 @@ case class SessionConnectEvent(socket: Socket) extends Event {
 class SessionConnectEventExecutor extends EventExecutor {
   val eventName: String = SessionConnectEventName.name
 
-  def execute(sessionConnectEvent: Event): Unit = {
-    val event = sessionConnectEvent.asInstanceOf[SessionConnectEvent]
+  def execute(event: Event): Unit = {
+    val event = event.asInstanceOf[SessionConnectEvent]
     val newSession: Session = Session.createNewSession(event.socket)
     Logger.notify(s"Received new session with session id = ${newSession.sessionID}")
   }

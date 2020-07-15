@@ -2,7 +2,7 @@ package scalaserver.event
 
 trait EventExecutor {
   val eventName: String
-  def execute(eventPayload: Event): Unit
+  def execute(event: Event): Unit
 }
 
 object EventExecutor {
