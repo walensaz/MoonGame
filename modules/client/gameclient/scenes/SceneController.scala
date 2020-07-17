@@ -1,10 +1,8 @@
 package scenes
 
-import java.io.IOException
-
 import event.OnCloseEvent
 import javafx.fxml.FXMLLoader
-import javafx.scene.{Parent, Scene}
+import javafx.scene.Scene
 import javafx.scene.layout.{AnchorPane, Pane}
 import javafx.stage.{Stage, WindowEvent}
 
