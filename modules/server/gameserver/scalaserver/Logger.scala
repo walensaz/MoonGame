@@ -1,5 +1,6 @@
 package scalaserver
 
+import java.io.{FileWriter, PrintWriter}
 import java.text.{DateFormat, SimpleDateFormat}
 import java.util.Date
 
@@ -15,26 +16,36 @@ object Logger {
   val ANSI_CYAN = "\u001B[36m"
   val ANSI_WHITE = "\u001B[37m"
 
-  implicit val dataFormat: DateFormat = new SimpleDateFormat("[MM/dd/yyyy-hh:mm:ss]")
+  lazy implicit val dateFormat: DateFormat = new SimpleDateFormat("[MM/dd/yyyy-hh:mm:ss]")
+  private lazy val loggerFile: PrintWriter = new PrintWriter(new FileWriter(s"${Utils.formatDate(new Date(System.currentTimeMillis()), "MM-dd-yyyy")}-log.log", true))
 
   def notify(notification: String): Unit = {
-    println(s"$ANSI_BLUE[NOTIFY]${dataFormat.format(new Date(System.currentTimeMillis()))} $notification")
+    println(s"$ANSI_BLUE[NOTIFY]${dateFormat.format(new Date(System.currentTimeMillis()))} $notification")
   }
 
   def log(log: String): Unit = {
-    println(s"$ANSI_PURPLE[LOG]${dataFormat.format(new Date(System.currentTimeMillis()))} - $log")
+    val strToPrint = s"[LOG]${dateFormat.format(new Date(System.currentTimeMillis()))} - $log"
+    println(s"$ANSI_PURPLE$strToPrint")
+    loggerFile.println(strToPrint)
+    loggerFile.flush()
   }
 
   def info(info: String): Unit = {
-    println(s"$ANSI_YELLOW[INFO]${dataFormat.format(new Date(System.currentTimeMillis()))} $info")
+    println(s"$ANSI_YELLOW[INFO]${dateFormat.format(new Date(System.currentTimeMillis()))} $info")
   }
 
   def error(error: String, clazz: Class[Any]): Unit = {
-    println(s"$ANSI_RED${clazz.getCanonicalName} >> $error")
+    val strToPrint = s"${clazz.getCanonicalName} >> $error"
+    println(s"$ANSI_RED$strToPrint")
+    loggerFile.println(strToPrint)
+    loggerFile.flush()
   }
 
   def error(error: String): Unit = {
-    println(s"$ANSI_RED[ERROR]${dataFormat.format(new Date(System.currentTimeMillis()))} >> $error")
+    val strToPrint = s"[ERROR]${dateFormat.format(new Date(System.currentTimeMillis()))} >> $error"
+    println(s"$ANSI_RED$strToPrint")
+    loggerFile.println(strToPrint)
+    loggerFile.flush()
   }
 
 }

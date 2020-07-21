@@ -1,7 +1,6 @@
 package scalaserver.session.packet
 
 import scalaserver.session.Session
-import scalaserver.session.packet.inbound.InBoundPacket
 
 /**
  * Zachary Walensa 2020

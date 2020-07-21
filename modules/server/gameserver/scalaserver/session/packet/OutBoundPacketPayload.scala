@@ -1,4 +1,4 @@
-package scalaserver.session.packet.outbound
+package scalaserver.session.packet
 
 /**
  * Zachary Walensa 2020

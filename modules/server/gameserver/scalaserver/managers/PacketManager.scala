@@ -2,8 +2,7 @@ package scalaserver.managers
 
 import org.json.JSONObject
 import scalaserver.Logger
-import scalaserver.session.packet.outbound.OutBoundPacket
-import scalaserver.session.packet.{Packet, PacketPayLoad}
+import scalaserver.session.packet.{OutBoundPacket, Packet, PacketPayLoad}
 
 object PacketManager extends Manager {
 

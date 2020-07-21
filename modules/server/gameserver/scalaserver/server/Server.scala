@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit
 import scalaserver.Config.ServerConfig
 import scalaserver.{BaseModule, Logger}
 import scalaserver.entity.Listener
+import scalaserver.event.events.SessionConnectEvent
 import scalaserver.managers.{AsyncManager, EventManager}
-import scalaserver.session.SessionConnectEvent
 
 object Server {
   lazy val serverInstance = new Server

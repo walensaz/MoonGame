@@ -1,8 +1,7 @@
-package scalaserver.session.packet.inbound
+package scalaserver.session.packet
 
 import org.json.JSONObject
 import scalaserver.session.Session
-import scalaserver.session.packet.Packet
 
 /**
  * Zachary Walensa 2020

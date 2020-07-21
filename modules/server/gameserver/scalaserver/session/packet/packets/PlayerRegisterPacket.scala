@@ -1,12 +1,10 @@
-package scalaserver.session.packet.inbound.packets
+package scalaserver.session.packet.packets
 
 import org.json.JSONObject
 import scalaserver.json.JSON
 import scalaserver.managers.PlayerManager
 import scalaserver.session.Session
-import scalaserver.session.packet.Packet
-import scalaserver.session.packet.inbound.InBoundPacket
-import scalaserver.session.packet.outbound.{OutBoundPacket, OutBoundPacketPayload}
+import scalaserver.session.packet.{InBoundPacket, OutBoundPacket, OutBoundPacketPayload, Packet}
 
 class InBoundPlayerRegisterPacket extends InBoundPacket {
   def execute(jsonObject: JSONObject, session: Session): Unit = {
@@ -19,7 +17,7 @@ class InBoundPlayerRegisterPacket extends InBoundPacket {
     session.sendPacket(packetToSend)
   }
 
-  val packetID: String = packetKeys.RegisterOutBoundPacketKey
+  val packetID: String = packetKeys.RegisterPacketKey
 }
 
 class OutBoundPlayerRegisterPacket extends OutBoundPacket {
@@ -28,7 +26,7 @@ class OutBoundPlayerRegisterPacket extends OutBoundPacket {
     Packet.jsonPacket(this, JSON(Map("wassuccessful" -> info.wasSuccessful)))
   }
 
-  val packetID: String = packetKeys.RegisterOutBoundPacketKey
+  val packetID: String = packetKeys.RegisterPacketKey
 }
 
 case class OutBoundPlayerRegisterPacketPayload(wasSuccessful: Boolean) extends OutBoundPacketPayload

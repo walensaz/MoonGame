@@ -3,15 +3,15 @@ package sharedkeys
 trait PacketKeys {
 
   object FromServer {
-    val FailureConnectionOutBoundPacketKey = "connection.failure"
-    val SuccessfulConnectionOutBoundPacketKey = "connection.success"
-    val LoginOutBoundPacketKey = "login.server"
-    val RegisterOutBoundPacketKey = "register.server"
+    val FailureConnectionPacketKey = "connection.failure"
+    val SuccessfulConnectionPacketKey = "connection.success"
+    val LoginPacketKey = "login.server"
+    val RegisterPacketKey = "register.server"
   }
 
   object FromClient {
-    val LoginOutBoundPacketKey = "login.client"
-    val RegisterOutBoundPacketKey = "login.client"
+    val LoginPacketKey = "login.client"
+    val RegisterPacketKey = "login.client"
   }
 
 }

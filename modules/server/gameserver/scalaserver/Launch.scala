@@ -2,7 +2,8 @@ package scalaserver
 
 import scalaserver.server.Server
 import scalaserver.session.Session
-import scalaserver.session.packet.outbound.packets.{SuccessfulConnectionOutBoundPacket, SuccessfulConnectionOutBoundPacketPayload}
+import scalaserver.session.packet.packets.outbound.{SuccessfulConnectionOutBoundPacket, SuccessfulConnectionOutBoundPacketPayload}
+
 import scala.language.postfixOps
 
 object Launch extends App {

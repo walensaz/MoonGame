@@ -2,10 +2,9 @@ package scalaserver
 
 import scalaserver.managers.{EventManager, ListenerManager, PacketManager}
 import scalaserver.server.Server.IncomingConnectionsListener
-import scalaserver.session.SessionConnectEventExecutor
-import scalaserver.session.packet.outbound.packets.{FailureConnectionOutBoundPacket, SuccessfulConnectionOutBoundPacket}
-
 import Logger._
+import scalaserver.event.events.OnSessionConnectEvent
+import scalaserver.session.packet.packets.outbound.{FailureConnectionOutBoundPacket, SuccessfulConnectionOutBoundPacket}
 
 object BaseModule {
 
@@ -17,7 +16,7 @@ object BaseModule {
   }
 
   def registerAllEvents(): Boolean = {
-    EventManager.registerEvent(new SessionConnectEventExecutor)
+    EventManager.registerEvent(new OnSessionConnectEvent)
     info("All events registered")
     true
   }
