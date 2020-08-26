@@ -1,3 +1,3 @@
 package scalaserver.map
 
-class Tile(x: Int, y: Int, isOccupied: Boolean)
+case class Tile(coordinate: Coordinate, tileInfo: TileInfo, isOccupied: Boolean)
