@@ -69,23 +69,28 @@ public class RegisterController implements Initializable {
                 title.setTranslateY(0);
                 registerButton.setTranslateY(0);
                 extrasBox.setTranslateY(0);
+                confirmPassword.setTranslateX(0);
                 password.setTranslateY(0);
                 username.setTranslateY(0);
 
                 vbox.setStyle("-fx-font-size:15;");
                 username.setStyle("-fx-font-size:15;");
                 password.setStyle("-fx-font-size:15;");
+                confirmPassword.setStyle("-fx-font-size:15;");
                 title.setStyle("-fx-font-size:27;");
             } else {
-                title.setStyle("-fx-font-size:" + (27 + (int)(vbox.getHeight() - height) / 15) + ";");
-                username.setTranslateY((vbox.getHeight() - height) / 3.6);
-                username.setStyle("-fx-font-size:" + (15 + (int)(vbox.getHeight() - height) / 20) + ";");
-                password.setTranslateY((vbox.getHeight() - height) / 2);
-                password.setStyle("-fx-font-size:" + (15 + (int)(vbox.getHeight() - height) / 20) + ";");
+                double smallFontSize = (15 + (vbox.getHeight() - height) / 20);
+                title.setStyle("-fx-font-size:" + (27 + (int)(vbox.getHeight() - height) / 14) + ";");
+                username.setTranslateY((vbox.getHeight() - height) / 5);
+                username.setStyle("-fx-font-size:" + smallFontSize + ";");
+                password.setTranslateY((vbox.getHeight() - height) / 5);
+                password.setStyle("-fx-font-size:" + smallFontSize + ";");
+                confirmPassword.setTranslateY((vbox.getHeight() - height) / 5);
+                confirmPassword.setStyle("-fx-font-size:" + smallFontSize + ";");
                 alreadyHaveAccount.setStyle("-fx-font-size:" + (10 + (int)(vbox.getHeight() - height) / 26) + ";");
                 vbox.setStyle("-fx-font-size:" + (15 + (int)(vbox.getHeight() - height) / 20) + ";");
-                registerButton.setTranslateY((vbox.getHeight() - height) / 2);
-                extrasBox.setTranslateY((vbox.getHeight() - height) / 2);
+                registerButton.setTranslateY((vbox.getHeight() - height) / 3);
+                extrasBox.setTranslateY((vbox.getHeight() - height) / 3);
             }
         };
         vbox.widthProperty().addListener(vboxSizeListener);

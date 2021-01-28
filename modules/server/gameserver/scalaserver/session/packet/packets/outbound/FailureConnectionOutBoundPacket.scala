@@ -2,12 +2,13 @@ package scalaserver.session.packet.packets.outbound
 
 import org.json.JSONObject
 import scalaserver.json.JSON
-import scalaserver.session.packet.{OutBoundPacket, OutBoundPacketPayload, Packet}
+import scalaserver.session.packet.{OutBoundPacket, OutBoundPacketPayload, Packet, RegisteredPacket}
 
 /**
  * Zachary Walensa 2020
  */
 
+@RegisteredPacket(packetName = "connection.failure")
 class FailureConnectionOutBoundPacket extends OutBoundPacket {
 
   def encode(payload: OutBoundPacketPayload): JSONObject = {

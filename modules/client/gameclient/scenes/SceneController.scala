@@ -24,9 +24,10 @@ object SceneController {
   def changeToLoginScene(): Unit = {
       val root: AnchorPane = FXMLLoader.load(getClass.getResource("login.fxml"))
       stage.setTitle("Login")
-      stage.setScene(new Scene(root, 1200, 800))
+      currentScene = new Scene(root, 1200, 800)
+      stage.setScene(currentScene)
       stage.show()
   }
 
-
+  def getCurrentScene = currentScene
 }

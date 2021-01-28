@@ -23,7 +23,7 @@
                   <Insets left="220.0" />
                </VBox.margin>
             </Label>
-            <HBox fillHeight="false" maxHeight="120.0" prefHeight="13.0" prefWidth="295.0" VBox.vgrow="ALWAYS">
+            <HBox maxHeight="120.0" prefHeight="13.0" prefWidth="295.0">
                <children>
                   <JFXTextField fx:id="username" minWidth="226.0" prefHeight="37.0" prefWidth="397.0" promptText="Username" unFocusColor="#00000040" HBox.hgrow="ALWAYS" />
                </children>
@@ -31,11 +31,11 @@
                   <Insets left="150.0" right="125.0" />
                </VBox.margin>
             </HBox>
-            <HBox prefHeight="24.0" prefWidth="550.0" VBox.vgrow="NEVER">
+            <HBox prefHeight="24.0" prefWidth="550.0">
                <children>
                   <JFXPasswordField fx:id="password" layoutX="10.0" layoutY="10.0" maxHeight="120.0" minWidth="226.0" prefHeight="37.0" prefWidth="286.0" promptText="Password" unFocusColor="#00000040" HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets />
                      </HBox.margin>
                   </JFXPasswordField>
                </children>

@@ -1,0 +1,1 @@
+registered_users_add_columns - ADD COLUMNS COLUMN{date_registered, TIMESTAMP},

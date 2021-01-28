@@ -1,5 +1,7 @@
 package scalaserver
 
+import scalaserver.map.{Coordinate, Square}
+
 object Config {
 
   object ServerConfig {
@@ -9,6 +11,8 @@ object Config {
     val TICK_RATE = 100
   }
 
-
-
+  object MapConfig {
+    val MAP_SIZE = Square(Coordinate(1000, 1000), Coordinate(-1000, -1000))
+    val TILE_LEVEL_CHANCES = Map()
+  }
 }

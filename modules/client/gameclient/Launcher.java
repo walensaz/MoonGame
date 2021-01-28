@@ -8,18 +8,13 @@ import scenes.SceneController;
 
 public class Launcher extends Application {
 
-    public static Stage stage;
-
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) {
         SceneController.onAppStartup(stage);
     }
-
 
     public static void main(String[] args) {
         ScalaApplication.run();
         launch(args);
     }
-
-
 }

@@ -23,25 +23,22 @@
                   <Insets left="210.0" />
                </VBox.margin>
             </Label>
-            <HBox fillHeight="false" maxHeight="120.0" prefHeight="28.0" prefWidth="276.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <JFXTextField fx:id="username" minWidth="226.0" prefHeight="37.0" prefWidth="397.0" promptText="Username" unFocusColor="#00000040" HBox.hgrow="ALWAYS" />
-               </children>
+            <AnchorPane VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets left="150.0" right="125.0" />
                </VBox.margin>
-            </HBox>
-            <HBox prefHeight="24.0" prefWidth="550.0" VBox.vgrow="NEVER">
                <children>
-                  <JFXPasswordField fx:id="password" layoutX="10.0" layoutY="10.0" maxHeight="120.0" minWidth="226.0" prefHeight="37.0" prefWidth="286.0" promptText="Password" unFocusColor="#00000040" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin></JFXPasswordField>
+                  <JFXTextField fx:id="username" minWidth="226.0" prefHeight="37.0" prefWidth="397.0" promptText="Username" unFocusColor="#00000040" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
+            </AnchorPane>
+            <AnchorPane VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="20.0" left="150.0" right="125.0" />
                </VBox.margin>
-            </HBox>
+               <children>
+                  <JFXPasswordField fx:id="password" maxHeight="120.0" minWidth="226.0" prefHeight="37.0" prefWidth="286.0" promptText="Password" unFocusColor="#00000040" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
             <JFXButton fx:id="loginbutton" alignment="TOP_LEFT" buttonType="RAISED" opacity="0.68" styleClass="loginbutton" text="Sign In" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets left="255.0" />
