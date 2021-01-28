@@ -17,6 +17,7 @@ class InBoundPlayerInfoPacket extends InBoundPacket {
 class OutBoundPlayerInfoPacket extends OutBoundPacket {
   override def encode(payload: OutBoundPacketPayload): JSONObject = {
     val outBoundPayload = payload.asInstanceOf[OutBoundPlayerInfoPacketPayload]
+    //Test
     Packet.jsonPacket(this, JSON(Map.empty))
   }
 
